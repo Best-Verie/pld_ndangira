@@ -3,7 +3,7 @@
 
 ### Getting started
 
-> Make sure you have a well-functioning linux/python environment and MYSQL database.
+> Ensure you have a well-functioning Linux/Python environment and MYSQL database.
 
 clone the repo
 
@@ -48,3 +48,4 @@ sudo apt install MYSQL
 3. Egide Harerimana
 4. Habib Josue Ahadi
 5. Hortance Irakoze
+6. Samuel Mugisha
