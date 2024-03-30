@@ -31,18 +31,22 @@ def manage_account():
     while True:
         if choice == '1':
             print("\nChange password still under construction!\n")
+            print_menu()
             break
         elif choice == '2':
             print("\nUpdate profile still under construction!\n")
+            print_menu()
             break
         elif choice == '3':
             print("\nUpdate account status still under construction!\n")
+            print_menu()
             break
         elif choice == '4':
             print_menu()
             break
         elif choice == '5':
             print("\nBye!\n")
+            print_menu()
             break
         else:
             print("\nInvalid option!\n")
