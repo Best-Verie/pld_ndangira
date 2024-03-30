@@ -43,3 +43,4 @@ def register():
                  f"'{user.password}','{user.user_type}')")
         connection.cursor().execute(query)
         connection.commit()
+        print("\nUser succesfully registered")
