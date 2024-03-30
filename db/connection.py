@@ -3,6 +3,6 @@ from mysql import connector
 connection = connector.connect(
     host="localhost",
     user="root",
-    password="1234",
+    password="password",
     database="ndangira"
 )
