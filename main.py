@@ -61,12 +61,12 @@ if __name__ == '__main__':
         elif choice == '2':
             login()
         elif choice == '3':
-            print("\nBye!\n")
+            print("\nView All jobs still under construction!\n")
             break
         elif choice == '4':
             manage_account()
         elif choice == '5':
-            print("\nBye!\n")
+            print("\nDelete account still under construction!\n")
             break
         elif choice == '6':
             print("\nBye!\n")
