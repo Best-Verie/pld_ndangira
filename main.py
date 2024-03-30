@@ -27,7 +27,17 @@ def manage_account():
     print("| 5. Exit                                                                    |")
     print("==============================================================================")
 
-    
+
+def view_jobs():
+    print("==============================================================================")
+    print("|                   Job Search and Discovery                                |")
+    print("==============================================================================")
+    print("| 1. Open Positions                                                         |")
+    print("| 2. Update profile                                                          |")
+    print("| 3. Update account status                                                   |")
+    print("| 4. Go back to main menu                                                    |")
+    print("| 5. Exit                                                                    |")
+    print("==============================================================================")
     while True:
         choice = input("Choose option: ")
         if choice == '1':
@@ -61,7 +71,7 @@ if __name__ == '__main__':
         elif choice == '2':
             login()
         elif choice == '3':
-            print("\nView All jobs still under construction!\n")
+            view_jobs()
             break
         elif choice == '4':
             manage_account()
