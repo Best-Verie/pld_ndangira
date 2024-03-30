@@ -28,16 +28,7 @@ def manage_account():
     print("==============================================================================")
 
 
-def view_jobs():
-    print("==============================================================================")
-    print("|                   Job Search and Discovery                                |")
-    print("==============================================================================")
-    print("| 1. Open Positions                                                         |")
-    print("| 2. Update profile                                                          |")
-    print("| 3. Update account status                                                   |")
-    print("| 4. Go back to main menu                                                    |")
-    print("| 5. Exit                                                                    |")
-    print("==============================================================================")
+
     while True:
         choice = input("Choose option: ")
         if choice == '1':
@@ -62,7 +53,43 @@ def view_jobs():
         else:
             print("\nInvalid option!\n")
             manage_account()
+def view_jobs():
+    print("=============================================================================")
+    print("|                   Job Search and Discovery                                |")
+    print("=============================================================================")
+    print("| 1. Open Positions                                                         |")
+    print("| 2. Browse Companies                                                       |")
+    print("| 3. Application status                                                     |")
+    print("| 4. Go back to main menu                                                   |")
+    print("| 5. Exit                                                                   |")
+    print("=============================================================================")
 
+    while True:
+        choice = input("Choose option: ")
+        if choice == '1':
+            print("\nOpen Positions still under construction!\n")
+            print_menu()
+            break
+        elif choice == '2':
+            print("\nBrowse Companies still under construction!\n")
+            print_menu()
+            break
+        elif choice == '3':
+            print("\nApplication status still under construction!\n")
+            print_menu()
+            break
+        elif choice == '4':
+            print_menu()
+            break
+        elif choice == '5':
+            print("\nBye!\n")
+            print_menu()
+            break
+        else:
+            print("\nInvalid option!\n")
+            view_jobs()
+
+            
 if __name__ == '__main__':
     choice = '7'
     while True:
