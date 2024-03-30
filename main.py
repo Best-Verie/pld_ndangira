@@ -27,8 +27,9 @@ def manage_account():
     print("| 5. Exit                                                                    |")
     print("==============================================================================")
 
-    choice = input("Choose option: ")
+    
     while True:
+        choice = input("Choose option: ")
         if choice == '1':
             print("\nChange password still under construction!\n")
             print_menu()
