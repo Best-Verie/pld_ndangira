@@ -89,7 +89,8 @@ def view_jobs():
             print("\nInvalid option!\n")
             view_jobs()
 
-            
+#Choices
+
 if __name__ == '__main__':
     choice = '7'
     while True:
