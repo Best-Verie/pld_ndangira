@@ -62,7 +62,10 @@ def update_account_status():
     email_or_username = input("Enter user's email or username: ")
     new_status = input("Enter the new account status (Active/Inactive): ")
 
-    
+    # Validate the new status
+    if new_status not in ('Active', 'Inactive'):
+        print("Invalid account status. Please enter 'Active' or 'Inactive'.")
+        return
 
     # Execute the UPDATE query
     cursor = connection.cursor()
