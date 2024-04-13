@@ -12,6 +12,7 @@ CREATE TABLE IF NOT EXISTS users (
     address TEXT,
     gender ENUM('Male', 'Female', 'Other'),
     user_type ENUM('Admin', 'User') NOT NULL DEFAULT 'User',
+    account_status VARCHAR(20) DEFAULT 'Active',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );

@@ -1,4 +1,5 @@
 from auth.auth import register, login
+from services.account.management import change_password, update_profile, update_account_status
 
 user_id = None
 
@@ -33,16 +34,16 @@ def manage_account():
     while True:
         choice = input("Choose option: ")
         if choice == '1':
-            print("\nChange password still under construction!\n")
-            print_menu()
+            change_password()
+            manage_account()
             break
         elif choice == '2':
-            print("\nUpdate profile still under construction!\n")
-            print_menu()
+            update_profile()
+            manage_account()
             break
         elif choice == '3':
-            print("\nUpdate account status still under construction!\n")
-            print_menu()
+            update_account_status()
+            manage_account()
             break
         elif choice == '4':
             print_menu()
