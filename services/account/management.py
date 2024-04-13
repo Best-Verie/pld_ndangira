@@ -28,7 +28,10 @@ def update_profile():
     new_address = input("Enter your new address (leave blank to keep current): ")
     new_gender = input("Enter your new gender (Male/Female/Other, leave blank to keep current): ")
 
-    
+    # Validate gender
+    if new_gender and new_gender not in ('Male', 'Female', 'Other'):
+         print("Invalid gender type. Please enter 'Male' or 'Female' or 'Other'.")
+         return
 
 
     update_fields = []
