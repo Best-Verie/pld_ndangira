@@ -57,7 +57,22 @@ def update_profile():
         print("No changes made")
 
 
+def update_account_status():
+    """Update user account status"""
+    email_or_username = input("Enter user's email or username: ")
+    new_status = input("Enter the new account status (Active/Inactive): ")
 
+    
+
+    # Execute the UPDATE query
+    cursor = connection.cursor()
+    cursor.execute(f"UPDATE users SET account_status='{new_status}' WHERE email='{email_or_username}' OR username='{email_or_username}'")
+    if cursor.rowcount > 0:
+        connection.commit()
+        print("Account status updated successfully")
+    else:
+        print("No user found with the provided email or username")
+    cursor.close()
 
 
 
