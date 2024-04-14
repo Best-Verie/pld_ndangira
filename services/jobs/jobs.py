@@ -29,14 +29,16 @@ def createJob():
     print("\nJob successfully registered")
 
 def getJobs():
-    jobs = []
-    if connection.is_connected():
-        cursor = connection.cursor()
-        cursor.execute("SELECT * FROM jobs")
-        for (id, title, description, company, location, salary, category) in cursor:
-            job = Job(id=id, title=title, description=description, company=company, location=location, salary=salary, category=category)
-            jobs.append(job)
-        cursor.close()
+    cursor = connection.cursor()
+    cursor.execute("SELECT * FROM jobs")
+    jobs = cursor.fetchall()
+    cursor.close()
+    print("\n")
+    print("ID\tTitle\t\t\tDescription\tSalary\t\tLocation\tCompany\t\tCategory\tStatus")
+    print("========================================================================================================================")
+    for job in jobs:
+        print(f"{job[0]}\t{job[1]}\t{job[2]}\t\t{job[3]}\t{job[4]}\t\t{job[5]}\t\t{job[6]}\t\t{job[7]}")
+    print("\n")
     return jobs
 
 def updateJobById(job_id, new_title, new_description, new_company, new_location, new_salary, new_category):
@@ -45,9 +47,28 @@ def updateJobById(job_id, new_title, new_description, new_company, new_location,
         cursor.execute("UPDATE jobs SET title=%s, description=%s, company=%s, location=%s, salary=%s, category=%s WHERE id=%s", 
                        (new_title, new_description, new_company, new_location, new_salary, new_category, job_id))
         connection.commit()
-        print("\nJob succesfully registered")
+        print("\nJob succesfully updated")
 #Output
 
+def closeJobById(job_id):
+    if connection.is_connected():
+        cursor = connection.cursor()
+        cursor.execute("UPDATE jobs SET status='CLOSED' WHERE id=%s", (job_id,))
+        connection.commit()
+        print("\nJob closed")
+
+def get_companies():
+    cursor = connection.cursor()
+    cursor.execute("SELECT DISTINCT company FROM jobs")
+    companies = cursor.fetchall()
+    cursor.close()
+    print("\n")
+    print("Companies")
+    print("=========")
+    for company in companies:
+        print(company[0])
+    print("\n")
+    return companies
 
 def get_jobs_by_title(title):
     title = input("Enter title: ")
@@ -55,6 +76,11 @@ def get_jobs_by_title(title):
     cursor.execute(f"SELECT * FROM jobs WHERE title='{title}'")
     job = cursor.fetchone()
     cursor.close()
+    print("\n")
+    print("ID\tTitle\t\t\tDescription\tSalary\t\tLocation\tCompany\t\tCategory\tStatus")
+    print("========================================================================================================================")
+    print(f"{job[0]}\t{job[1]}\t{job[2]}\t\t{job[3]}\t{job[4]}\t\t{job[5]}\t\t{job[6]}\t\t{job[7]}")
+    print("\n")
     return job
 
 def get_open_jobs():
@@ -62,4 +88,10 @@ def get_open_jobs():
     cursor.execute("SELECT * FROM jobs WHERE status='OPEN'")
     jobs = cursor.fetchall()
     cursor.close()
+    print("\n")
+    print("ID\tTitle\t\t\tDescription\tSalary\t\tLocation\tCompany\t\tCategory\tStatus")
+    print("========================================================================================================================")
+    for job in jobs:
+        print(f"{job[0]}\t{job[1]}\t{job[2]}\t\t{job[3]}\t{job[4]}\t\t{job[5]}\t\t{job[6]}\t\t{job[7]}")
+    print("\n")
     return jobs

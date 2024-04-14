@@ -1,7 +1,7 @@
 from auth.auth import register, login
 
 from services.account.management import change_password, update_profile, update_account_status
-from services.jobs.jobs import createJob, getJobs, get_jobs_by_title, get_open_jobs, updateJobById
+from services.jobs.jobs import createJob, getJobs, get_jobs_by_title, get_open_jobs, updateJobById,get_companies, closeJobById
 
 user_id = None
 
@@ -12,8 +12,9 @@ def adminPanel():
     print("| 1. Create Positions                                                       |")
     print("| 2. Update positions                                                       |")
     print("| 3. View Positions                                                         |")
-    print("| 4. Go back to main menu                                                   |")
-    print("| 5. Exit                                                                   |")
+    print("| 4. Close By Job Id                                                        |")
+    print("| 5. Go back to main menu                                                   |")
+    print("| 6. Exit                                                                   |")
     print("=============================================================================")
 
     while True:
@@ -31,9 +32,14 @@ def adminPanel():
             print_menu()
             break
         elif choice == '4':
+            job_id = input("Enter job id: ")
+            closeJobById(job_id)
             print_menu()
             break
         elif choice == '5':
+            print_menu()
+            break
+        elif choice == '6':
             print("\nBye!\n")
             print_menu()
             break
@@ -47,7 +53,7 @@ def print_menu():
     print("==============================================================================")
     print("| 1. Register                                                                |")
     print("| 2. Login                                                                   |")
-    print("| 3. View All jobs                                                           |")
+    print("| 3. Job Management                                                          |")
     print("| 4. Manage your Account                                                     |")
     print("| 5. Delete account                                                          |")
     print("| 6. Clear                                                                   |")
@@ -102,31 +108,38 @@ def view_jobs():
     print("| 2. Add Jobs                                                               |")
     print("| 3. Browse Companies                                                       |")
     print("| 4. Application status                                                     |")
-    print("| 5. Go back to main menu                                                   |")
-    print("| 6. Exit                                                                   |")
+    print("| 5. View positions                                                         |")
+    print("| 6. Go back to main menu                                                   |")
+    print("| 7. Exit                                                                   |")
     print("=============================================================================")
 
     while True:
         choice = input("Choose option: ")
         if choice == '1':
-            print("\nOpen Positions still under construction!\n")
-            print_menu()
+            get_open_jobs()
+            view_jobs()
             break
         elif choice == '2':
             createJob()
+            view_jobs()
+
             break
         elif choice == '3':
-            print("\nBrowse Companies still under construction!\n")
-            print_menu()
+            get_companies()
+            view_jobs()
             break
         elif choice == '4':
             print("\nApplication status still under construction!\n")
-            print_menu()
+            view_jobs()
             break
         elif choice == '5':
-            print_menu()
+            getJobs()
+            view_jobs()
             break
         elif choice == '6':
+            print_menu()
+            break
+        elif choice == '7':
             print("\nBye!\n")
             print_menu()
             break
