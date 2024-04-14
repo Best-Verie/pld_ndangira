@@ -3,9 +3,9 @@ from db.connection import connection
 
 
 def createJob():
-    title = input("Title: ")
+    title = input("Enter Title: ")
     description = input("Description: ")
-    company = input("Company: ")
+    company = input("Company name: ")
     location = input("Location: ")
     salary = input("Salary: ")
     category = input("Category: ")
@@ -17,6 +17,8 @@ def createJob():
     #     return
 
     # cursor.close()
+
+#Connection to the database
 
     if connection.is_connected():
       query = ("INSERT INTO jobs(title, description, company, location, salary, category) "

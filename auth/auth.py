@@ -1,6 +1,7 @@
 from models.user import User
 from db.connection import connection
 
+#Login  Credentials
 
 def login():
     email = input("Email/Username: ")
@@ -13,6 +14,7 @@ def login():
     cursor.close()
     print(f"\nLogged in as: email={user[0]}, username={user[1]}")
 
+#Registration Credentials
 
 def register():
     """New User Registration"""
@@ -23,6 +25,8 @@ def register():
     user.username = input("Username: ")
     user.password = input("Password: ")
     user.user_type = "User"
+
+#Fetching Data from db
 
     cursor = connection.cursor()
     cursor.execute(f"SELECT email FROM users WHERE email='{user.email}'")
@@ -36,6 +40,8 @@ def register():
         return
 
     cursor.close()
+
+#Inserting Data
 
     if connection.is_connected():
         query = ("INSERT INTO users(first_name, last_name, username, email, password, user_type)"
