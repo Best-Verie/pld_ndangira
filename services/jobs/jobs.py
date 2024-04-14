@@ -25,3 +25,23 @@ def createJob():
         connection.commit()
         print("\nJob succesfully registered")
 
+def get_jobs():
+    if connection.is_connected():
+        query=("SELECT * FROM jobs")
+
+        connection.cursor().execute(query)
+        connection.commit()
+        print("Jobs successfully retrieved")
+
+def get_jobs_by_title():
+    title = input("Enter job title: ")
+    query = f"SELECT * FROM jobs WHERE title = '{title}'"
+    cursor = connection.cursor()
+    cursor.execute(query)
+    result = cursor.fetchall()
+    if len(result) == 0:
+        print("No jobs found with that title")
+    else:
+        for job in result:
+            print(job)
+    cursor.close()

@@ -1,5 +1,5 @@
 from auth.auth import register, login
-
+from services.jobs import createJob, get_jobs, get_jobs_by_title
 user_id = None
 
 def print_menu():
@@ -58,10 +58,11 @@ def view_jobs():
     print("|                   Job Search and Discovery                                |")
     print("=============================================================================")
     print("| 1. Open Positions                                                         |")
-    print("| 2. Browse Companies                                                       |")
-    print("| 3. Application status                                                     |")
-    print("| 4. Go back to main menu                                                   |")
-    print("| 5. Exit                                                                   |")
+    print("| 2. Add Jobs                                                               |")
+    print("| 3. Browse Companies                                                       |")
+    print("| 4. Application status                                                     |")
+    print("| 5. Go back to main menu                                                   |")
+    print("| 6. Exit                                                                   |")
     print("=============================================================================")
 
     while True:
@@ -71,17 +72,20 @@ def view_jobs():
             print_menu()
             break
         elif choice == '2':
+            createJob()
+            break
+        elif choice == '3':
             print("\nBrowse Companies still under construction!\n")
             print_menu()
             break
-        elif choice == '3':
+        elif choice == '4':
             print("\nApplication status still under construction!\n")
             print_menu()
             break
-        elif choice == '4':
+        elif choice == '5':
             print_menu()
             break
-        elif choice == '5':
+        elif choice == '6':
             print("\nBye!\n")
             print_menu()
             break
