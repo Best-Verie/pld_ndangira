@@ -71,7 +71,6 @@ def get_companies():
     return companies
 
 def get_jobs_by_title(title):
-    title = input("Enter title: ")
     cursor = connection.cursor()
     cursor.execute(f"SELECT * FROM jobs WHERE title='{title}'")
     job = cursor.fetchone()
@@ -81,6 +80,9 @@ def get_jobs_by_title(title):
     print("========================================================================================================================")
     print(f"{job[0]}\t{job[1]}\t{job[2]}\t\t{job[3]}\t{job[4]}\t\t{job[5]}\t\t{job[6]}\t\t{job[7]}")
     print("\n")
+    #if no job found
+    if job is None:
+        print("No job with that title found found")
     return job
 
 def get_open_jobs():

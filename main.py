@@ -109,6 +109,7 @@ def view_jobs():
     print("| 3. Browse Companies                                                       |")
     print("| 4. Application status                                                     |")
     print("| 5. View positions                                                         |")
+    print("| 6. Search by title                                                        |")
     print("| 6. Go back to main menu                                                   |")
     print("| 7. Exit                                                                   |")
     print("=============================================================================")
@@ -137,9 +138,13 @@ def view_jobs():
             view_jobs()
             break
         elif choice == '6':
-            print_menu()
+            get_jobs_by_title(title=input("Enter title: "))
+            view_jobs()
             break
         elif choice == '7':
+            print_menu()
+            break
+        elif choice == '8':
             print("\nBye!\n")
             print_menu()
             break
