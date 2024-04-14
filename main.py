@@ -1,6 +1,43 @@
 from auth.auth import register, login
+from services.jobs.jobs import createJob, getJobs, updateJobById
 
 user_id = None
+
+def adminPanel():
+    print("=============================================================================")
+    print("|                   Admin Panel                                             |")
+    print("=============================================================================")
+    print("| 1. Create Positions                                                       |")
+    print("| 2. Update positions                                                       |")
+    print("| 3. View Positions                                                         |")
+    print("| 4. Go back to main menu                                                   |")
+    print("| 5. Exit                                                                   |")
+    print("=============================================================================")
+
+    while True:
+        choice = input("Choose option: ")
+        if choice == '1':
+            print("\Welcome to admin panel/ Positions creation !\n")
+            createJob()
+            break
+        elif choice == '2':
+            print("\nUpdate positions still under construction!\n")
+            print_menu()
+            break
+        elif choice == '3':
+            print("\nView Positions still under construction!\n")
+            print_menu()
+            break
+        elif choice == '4':
+            print_menu()
+            break
+        elif choice == '5':
+            print("\nBye!\n")
+            print_menu()
+            break
+        else:
+            print("\nInvalid option!\n")
+            adminPanel()
 
 def print_menu():
     print("==============================================================================")
@@ -41,7 +78,7 @@ def manage_account():
             break
         elif choice == '3':
             print("\nUpdate account status still under construction!\n")
-            print_menu()
+            adminPanel()
             break
         elif choice == '4':
             print_menu()
@@ -116,3 +153,39 @@ if __name__ == '__main__':
         else:
             print("\nInvalid option!\n")
         choice = input("Choose option: ")
+
+def adminPanel():
+    print("=============================================================================")
+    print("|                   Admin Panel                                             |")
+    print("=============================================================================")
+    print("| 1. Create Positions                                                       |")
+    print("| 2. Update positions                                                       |")
+    print("| 3. View Positions                                                         |")
+    print("| 4. Go back to main menu                                                   |")
+    print("| 5. Exit                                                                   |")
+    print("=============================================================================")
+
+    while True:
+        choice = input("Choose option: ")
+        if choice == '1':
+            # print("\Welcome to admin panel/ Positions creation !\n")
+            createJob()
+            break
+        elif choice == '2':
+            # print("\nUpdate positions still under construction!\n")
+            updateJobById()
+            break
+        elif choice == '3':
+            # print("\nView Positions still under construction!\n")
+            getJobs()
+            break
+        elif choice == '4':
+            print_menu()
+            break
+        elif choice == '5':
+            print("\nBye!\n")
+            adminPanel()
+            break
+        else:
+            print("\nInvalid option!\n")
+            adminPanel()

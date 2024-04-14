@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4154d0f4-e111-46b7-8a5b-aa9408977472" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/models/job.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/jobs/jobs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/97b8aedd-3a7e-4964-9705-089825567788.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/97b8aedd-3a7e-4964-9705-089825567788/storage_v2/_src_/schema/ndangira.dAV1-A.meta" beforeDir="false" />
+    <list default="true" id="4154d0f4-e111-46b7-8a5b-aa9408977472" name="Changes" comment="Jobs registration Service">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/connection.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/connection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/jobs/jobs.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/jobs/jobs.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,14 +98,56 @@
       <updated>1711733626855</updated>
       <workItem from="1711733628896" duration="1039000" />
       <workItem from="1711734688768" duration="6375000" />
-      <workItem from="1711830828737" duration="1063000" />
+      <workItem from="1711830828737" duration="2846000" />
     </task>
+    <task id="LOCAL-00001" summary="Jobs Model">
+      <option name="closed" value="true" />
+      <created>1711831954319</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1711831954319</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Jobs Service">
+      <option name="closed" value="true" />
+      <created>1711832382465</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1711832382465</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Jobs registration Service">
+      <option name="closed" value="true" />
+      <created>1711832704567</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1711832704567</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Jobs Model" />
+    <MESSAGE value="Jobs Service" />
+    <MESSAGE value="Jobs registration Service" />
+    <option name="LAST_COMMIT_MESSAGE" value="Jobs registration Service" />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/pld_ndangira$main.coverage" NAME="main Coverage Results" MODIFIED="1711831308607" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pld_ndangira$main.coverage" NAME="main Coverage Results" MODIFIED="1711876955580" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
