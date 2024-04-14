@@ -1,8 +1,10 @@
 from mysql import connector
 
+#Connection db
+
 connection = connector.connect(
     host="localhost",
     user="root",
-    password="Habumuremyi",
-    database="ndangira"
+    password="",
+    database=""
 )

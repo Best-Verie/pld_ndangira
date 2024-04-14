@@ -1,5 +1,6 @@
 from auth.auth import register, login
-from services.jobs import createJob, get_jobs, get_jobs_by_title
+from services.account.management import change_password, update_profile, update_account_status
+from services.jobs.jobs import createJob, get_jobs, get_jobs_by_title, get_open_jobs
 user_id = None
 
 def print_menu():
@@ -15,6 +16,7 @@ def print_menu():
     print("| 7. Menu                                                                    |")
     print("| 8. Exit                                                                    |")
     print("==============================================================================")
+
 
 def manage_account():
     print("==============================================================================")
@@ -32,16 +34,16 @@ def manage_account():
     while True:
         choice = input("Choose option: ")
         if choice == '1':
-            print("\nChange password still under construction!\n")
-            print_menu()
+            change_password()
+            manage_account()
             break
         elif choice == '2':
-            print("\nUpdate profile still under construction!\n")
-            print_menu()
+            update_profile()
+            manage_account()
             break
         elif choice == '3':
-            print("\nUpdate account status still under construction!\n")
-            print_menu()
+            update_account_status()
+            manage_account()
             break
         elif choice == '4':
             print_menu()
@@ -93,7 +95,8 @@ def view_jobs():
             print("\nInvalid option!\n")
             view_jobs()
 
-            
+#Choices
+
 if __name__ == '__main__':
     choice = '7'
     while True:
